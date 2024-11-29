@@ -55,7 +55,7 @@ Now you're ready to start. Happy coding!
 ## The UK Intelligence Community's Design System
 
 > [!NOTE]
-> To help speed up the design and development process during the hackathon, we have included some resources here that are actively used by government agencies to design and build web applications.
+> To help speed up the design and development process during the hackathon, we have included some resources here that are actively used by government agencies in the UK to design and build web applications.
 
 This Design System helps you to design and build complex, specialised apps and services. It's used by MI6, MI5, GCHQ and our partners to construct tools that keep the UK safe and prosperous.
 
