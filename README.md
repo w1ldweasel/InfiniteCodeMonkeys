@@ -69,7 +69,7 @@ Install and use the UI Kit component library. Use React or web components to qui
 
 #### Installing the components
 
-The UI Kit components are available on [npmjs.com](npmjs.com), and can be installed from the command line:
+The UI Kit components are available on [npmjs.com](https://www.npmjs.com/), and can be installed from the command line:
 
 ```
 // Web components, Angular, Vue, Svelte
