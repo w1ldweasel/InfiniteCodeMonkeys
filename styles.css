@@ -17,6 +17,15 @@ body {
     text-align: center;
 }
 
+.screenshot {
+    width: 65%; /* Set the image width to 40% of its container */
+    height: auto;
+    margin-top: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
 h1,
 h2 {
     margin-bottom: 20px;
