@@ -17,11 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('termsAccepted', 'true');
             window.location.href = 'index.html'; // Redirect to the main application page
         } else {
-            alert('You must accept the terms to use this service.');
+            alert('You must agree to the terms to use this service.');
         }
     });
 
     declineTermsButton.addEventListener('click', () => {
-        alert('You must accept the terms to use this service.');
+        alert('You must agree to the terms to use this service.');
     });
 });
