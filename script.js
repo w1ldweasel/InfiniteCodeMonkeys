@@ -71,9 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
             transactionHistorySection.style.display = 'block';
             visualizationSection.style.display = 'block';
 
-            displayTransactionHistory();
-            displayTransactionResult(`You have made a transaction for "${item}" for £${amount} on ${transaction.date}.`);
-            updateChartData();
         });
 
         document.getElementById('cancelAction').addEventListener('click', () => {
