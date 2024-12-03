@@ -32,18 +32,25 @@ h2 {
     text-align: left;
 }
 
+.ans-no {
+    background-color: rgb(246, 71, 71);
+    color:white;
+}
+.ans-no:hover {
+    background-color: rgb(209, 10, 10);
+}
 .consent-section p {
     margin-bottom: 15px;
     text-align: left;
 }
 
 .confirm-action {
-    background-color: #32de84;
+    background-color: #566ffd;
     color: white;
 }
 
 .confirm-action:hover {
-    background-color:#1CAC78;
+    background-color:#103cecec;
 
 }
 form div {

@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Mobile Banking - Online Transaction Control</h1>
+        <h1>Online Transaction Control</h1>
         <div class="what-are-you-buying-section" id="whatAreYouBuyingSection">
             <h2>What Are You Buying?</h2>
             <form id="whatAreYouBuyingForm">
@@ -26,10 +26,13 @@
         </div>
         <div class="confirmation-section" id="confirmationSection" style="display: none;">
             <h2>Confirm Your Action</h2>
+            <p>Do you want to continue with this transaction? You will have $580 remaining budget for this month.</p>
+            <p>Your transaction:</p>
             <p id="confirmationMessage"></p>
+            <p>Do you want to proceed?</p>
             <div class="button-group">
-                <button id="confirmAction" class="confirm-action">Confirm</button>
-                <button id="cancelAction">Cancel</button>
+                <button id="confirmAction" class="confirm-action">Yes</button>
+                <button id="cancelAction" class="ans-no">No</button>
             </div>
         </div>
         <div class="transaction-history-section" id="transactionHistorySection" style="display: none;">
