@@ -17,7 +17,8 @@ body {
     text-align: center;
 }
 
-h1, h2 {
+h1,
+h2 {
     margin-bottom: 20px;
     color: #333;
 }
@@ -34,5 +35,59 @@ h1, h2 {
 .consent-section p {
     margin-bottom: 15px;
     text-align: left;
+}
+
+.confirm-action {
+    background-color: #32de84;
+    color: white;
+}
+
+.confirm-action:hover {
+    background-color:#1CAC78;
+
+}
+form div {
+    margin-bottom: 15px;
+
+    .consent-section {
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background-color: #f9f9f9;
+        text-align: left;
+    }
+}
+
+.what-are-you-buying-section,
+.confirmation-section,
+.transaction-history-section,
+.visualization-section {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.transaction-history-section th,
+.transaction-history-section td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.transaction-history-section th {
+    background-color: #e9ecef;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.button-group {
+    margin-top: 20px;
+    text-align: center;
 }
 
