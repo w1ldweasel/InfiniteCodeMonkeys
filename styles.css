@@ -37,7 +37,7 @@ h2 {
     color:white;
 }
 .ans-no:hover {
-    background-color: rgb(209, 10, 10);
+    background-color: rgb(224, 36, 36);
 }
 .consent-section p {
     margin-bottom: 15px;
@@ -45,12 +45,12 @@ h2 {
 }
 
 .confirm-action {
-    background-color: #566ffd;
+    background-color: #32de84;
     color: white;
 }
 
 .confirm-action:hover {
-    background-color:#103cecec;
+    background-color:#1CAC78;
 
 }
 form div {

@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             confirmationSection.style.display = 'block';
             confirmationSection.dataset.item = item;
             confirmationSection.dataset.amount = amount;
-            confirmationMessage.textContent = `£${amount}  - ${item}`;
+            confirmationMessage.textContent = `£${amount}  - Amazon (Reason of purchase: ${item})`;
         });
 
         document.getElementById('confirmAction').addEventListener('click', () => {
