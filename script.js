@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             confirmationSection.style.display = 'block';
             confirmationSection.dataset.item = item;
             confirmationSection.dataset.amount = amount;
-            confirmationMessage.textContent = `You are about to purchase "${item}" for £${amount}. Do you want to proceed?`;
+            confirmationMessage.textContent = `£${amount}  - Amazon (Reason of purchase: ${item})`;
         });
 
         document.getElementById('confirmAction').addEventListener('click', () => {
@@ -71,9 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
             transactionHistorySection.style.display = 'block';
             visualizationSection.style.display = 'block';
 
-            displayTransactionHistory();
-            displayTransactionResult(`You have made a transaction for "${item}" for £${amount} on ${transaction.date}.`);
-            updateChartData();
         });
 
         document.getElementById('cancelAction').addEventListener('click', () => {

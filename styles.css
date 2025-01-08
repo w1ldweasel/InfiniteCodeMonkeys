@@ -17,6 +17,15 @@ body {
     text-align: center;
 }
 
+.screenshot {
+    width: 65%; /* Set the image width to 40% of its container */
+    height: auto;
+    margin-top: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
 h1,
 h2 {
     margin-bottom: 20px;
@@ -32,6 +41,13 @@ h2 {
     text-align: left;
 }
 
+.ans-no {
+    background-color: rgb(246, 71, 71);
+    color:white;
+}
+.ans-no:hover {
+    background-color: rgb(224, 36, 36);
+}
 .consent-section p {
     margin-bottom: 15px;
     text-align: left;
