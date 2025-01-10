@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('tryAgain').addEventListener('click', () => {
+        window.location.href = 'landing.html';
+    });
+    
     const confirmAction = document.getElementById('confirmAction');
     const cancelAction = document.getElementById('cancelAction');
     checked = new Boolean(false);
@@ -17,12 +21,37 @@ document.addEventListener('DOMContentLoaded', () => {
         // window.location.href = 'landing.html'; // Redirect to the landing page for consent
     } else {
         const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+       
+        function transactionExists(item, amount, date) {
+            return transactions.some(transaction => transaction.item === item && transaction.amount === amount && transaction.date === date);
+        }
+        const newTransactions = [
+            {
+                item: "Henry Hoover",
+                amount: 150.05,
+                date: new Date('2024-12-02').toISOString().split('T')[0]
+            },
+            {
+                item: 'Power Bank',
+                amount: 10.49,
+                date: new Date('2024-12-03').toISOString().split('T')[0]
+            }
+        ];
+        
+        newTransactions.forEach(newTransaction => {
+            if (!transactionExists(newTransaction.item, newTransaction.amount, newTransaction.date)) {
+                transactions.push(newTransaction);
+            }
+        });
+        
+        localStorage.setItem('transactions', JSON.stringify(transactions));
+        
         const chartData = {
-            labels: ['Transactions'],
+            labels: ['Money In', 'Money Out'],
             datasets: [{
-                data: [transactions.length], // Initial data
-                backgroundColor: ['#28a745'],
-                hoverBackgroundColor: ['#218838']
+                data: [2, transactions.length], // Initial data
+                backgroundColor: ['#28a745', '#ff6384'],
+                hoverBackgroundColor: ['#218838','#c82333']
             }]
         };
 
@@ -71,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('confirmAction').addEventListener('click', () => {
             console.log('adding item!');
             const item = 'Wilson Tennis Racket'; // confirmationSection.dataset.item;
-            const amount = 580; // parseFloat(confirmationSection.dataset.amount);
+            const amount = 69.99; // parseFloat(confirmationSection.dataset.amount);
 
             const transaction = {
                 item,
@@ -87,6 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
             confirmationSection.style.display = 'none';
             transactionHistorySection.style.display = 'block';
             visualizationSection.style.display = 'block';
+            document.getElementById('tryAgain').style.display = 'block';
 
         });
 
@@ -146,6 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     td.textContent = cellText;
                     row.appendChild(td);
                 });
+                row.title = `Hovered over tracsaction: ${transaction.item} - £${transaction.amount}`;
                 tbody.appendChild(row);
             });
 
@@ -155,10 +186,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function updateChartData() {
-            chartData.datasets[0].data = [transactions.length];
+            chartData.datasets[0].data = [2, transactions.length];
             spendingChart.update();
             console.log('Updating Chart data');
         }
-        
+
     }
 });

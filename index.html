@@ -7,6 +7,7 @@
     <title>Mobile Banking - Impulse Control</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style> table tr:hover { background-color: #f1f1f1; cursor: pointer; } </style>
 </head>
 
 <body>
@@ -43,12 +44,13 @@
             <h2>Transaction History</h2>
             <div id="transactionHistory"></div>
             <button id="exportCSV">Export Transactions to CSV</button>
-            <button id="clearCSV">Clear Transactions</button>
+            <button id="clearCSV">Reset Transactions Example</button>
         </div>
         <div class="visualization-section" id="visualizationSection" style="display: none;">
             <h2>Spending Visualization</h2>
             <canvas id="spendingChart" width="400" height="400"></canvas>
         </div>
+        <button id="tryAgain" class="'tryAgain-section">Try Example Again</button>
     </div>
     </div>
     <script src="script.js"></script>
