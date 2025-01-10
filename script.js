@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     if (!localStorage.getItem('termsAccepted')) {
-        window.location.href = 'landing.html'; // Redirect to the landing page for consent
+        console.log("page reloading");
+        // window.location.href = 'landing.html'; // Redirect to the landing page for consent
     } else {
         const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
         const chartData = {
@@ -10,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 backgroundColor: ['#28a745'],
                 hoverBackgroundColor: ['#218838']
             }]
-        };
+        }; 
 
         const ctx = document.getElementById('spendingChart').getContext('2d');
         const spendingChart = new Chart(ctx, {
