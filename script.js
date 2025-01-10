@@ -1,5 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
-    if (!localStorage.getItem('termsAccepted')) {
+    const confirmAction = document.getElementById('confirmAction');
+    const cancelAction = document.getElementById('cancelAction');
+    checked = new Boolean(false);
+
+    confirmAction.addEventListener('click', () => {
+        checked = true;
+    });
+
+    cancelAction.addEventListener('click', () => {
+        alert('You must agree to the terms to use this service.');
+        confirmationSection.style.display = 'block';
+    })
+
+    if (!checked) {
         console.log("page reloading");
         // window.location.href = 'landing.html'; // Redirect to the landing page for consent
     } else {
@@ -11,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 backgroundColor: ['#28a745'],
                 hoverBackgroundColor: ['#218838']
             }]
-        }; 
+        };
 
         const ctx = document.getElementById('spendingChart').getContext('2d');
         const spendingChart = new Chart(ctx, {
@@ -31,33 +44,34 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        const whatAreYouBuyingSection = document.getElementById('whatAreYouBuyingSection');
+        // const whatAreYouBuyingSection = document.getElementById('whatAreYouBuyingSection');
         const confirmationSection = document.getElementById('confirmationSection');
         const transactionHistorySection = document.getElementById('transactionHistorySection');
         const transactionHistory = document.getElementById('transactionHistory');
         const confirmationMessage = document.getElementById('confirmationMessage');
         const visualizationSection = document.getElementById('visualizationSection');
 
-        document.getElementById('whatAreYouBuyingForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const item = document.getElementById('item').value;
-            const amount = parseFloat(document.getElementById('amount').value);
+        // document.getElementById('whatAreYouBuyingForm').addEventListener('submit', function (event) {
+        //     event.preventDefault();
+        //     const item = document.getElementById('item').value;
+        //     const amount = parseFloat(document.getElementById('amount').value);
 
-            if (!item || isNaN(amount) || amount <= 0) {
-                alert('Please enter valid item and amount.');
-                return;
-            }
+        //     if (!item || isNaN(amount) || amount <= 0) {
+        //         alert('Please enter valid item and amount.');
+        //         return;
+        //     }
 
-            whatAreYouBuyingSection.style.display = 'none';
-            confirmationSection.style.display = 'block';
-            confirmationSection.dataset.item = item;
-            confirmationSection.dataset.amount = amount;
-            confirmationMessage.textContent = `£${amount}  - Amazon (Reason of purchase: ${item})`;
-        });
+        //     whatAreYouBuyingSection.style.display = 'none';
+        //     confirmationSection.style.display = 'block';
+        //     confirmationSection.dataset.item = item;
+        //     confirmationSection.dataset.amount = amount;
+        //     confirmationMessage.textContent = `£${amount}  - Amazon (Reason of purchase: ${item})`;
+        // });
 
         document.getElementById('confirmAction').addEventListener('click', () => {
-            const item = confirmationSection.dataset.item;
-            const amount = parseFloat(confirmationSection.dataset.amount);
+            console.log('adding item!');
+            const item = 'Wilson Tennis Racket'; // confirmationSection.dataset.item;
+            const amount = 580; // parseFloat(confirmationSection.dataset.amount);
 
             const transaction = {
                 item,
@@ -67,16 +81,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             transactions.push(transaction);
             localStorage.setItem('transactions', JSON.stringify(transactions));
+            updateChartData();
+            displayTransactionHistory();
 
             confirmationSection.style.display = 'none';
             transactionHistorySection.style.display = 'block';
             visualizationSection.style.display = 'block';
 
-        });
-
-        document.getElementById('cancelAction').addEventListener('click', () => {
-            confirmationSection.style.display = 'none';
-            whatAreYouBuyingSection.style.display = 'block';
         });
 
         document.getElementById('exportCSV').addEventListener('click', () => {
@@ -92,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 link.click();
                 document.body.removeChild(link);
             }
+            console.log('Exported csv data');
         });
 
         document.getElementById('clearCSV').addEventListener('click', () => {
@@ -102,11 +114,11 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Transactions have been cleared.');
         });
 
-        function displayTransactionResult(message) {
-            const resultDiv = document.createElement('div');
-            resultDiv.textContent = message;
-            transactionHistorySection.appendChild(resultDiv);
-        }
+        // function displayTransactionResult(message) {
+        //     const resultDiv = document.createElement('div');
+        //     resultDiv.textContent = message;
+        //     transactionHistorySection.appendChild(resultDiv);
+        // }
 
         function displayTransactionHistory() {
             transactionHistory.innerHTML = '';
@@ -139,14 +151,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             table.appendChild(tbody);
             transactionHistory.appendChild(table);
+            console.log('Transaction table loaded');
         }
 
         function updateChartData() {
             chartData.datasets[0].data = [transactions.length];
             spendingChart.update();
+            console.log('Updating Chart data');
         }
-
-        displayTransactionHistory();
-        updateChartData();
+        
     }
 });
