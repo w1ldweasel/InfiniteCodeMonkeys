@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('tryAgain').addEventListener('click', () => {
-        window.location.href = 'landing.html';
+        window.location.href = 'index.html';
     });
     
     const confirmAction = document.getElementById('confirmAction');
@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!checked) {
         console.log("page reloading");
-        // window.location.href = 'landing.html'; // Redirect to the landing page for consent
     } else {
         const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
        
