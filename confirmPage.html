@@ -7,7 +7,12 @@
     <title>Mobile Banking - Impulse Control</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style> table tr:hover { background-color: #f1f1f1; cursor: pointer; } </style>
+    <style>
+        table tr:hover {
+            background-color: #f1f1f1;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -29,11 +34,14 @@
             </form>
         </div> -->
     <div class="container">
+        <div class="green-bar">
+            <p class="header">Online Transaction Control</p>
+        </div>        
         <div class="confirmation-section" id="confirmationSection">
             <h2>Confirm Your Action</h2>
             <p>Do you want to continue with this transaction? You will have £580 remaining budget for this month.</p>
             <p>Your transaction:</p>
-            <p id="confirmationMessage">You have made a transaction for £69.99 on Amazon.</p>
+            <p id="confirmationMessage">£69.99 - Amazon</p>
             <p>Do you want to proceed?</p>
             <div class="button-group">
                 <button id="confirmAction" class="confirm-action">Yes</button>

@@ -4,7 +4,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     margin: 0;
 }
 
@@ -83,7 +82,15 @@ form div {
     display: none;
 }
 
-/* .what-are-you-buying-section, */
+.green-bar {
+    color: white;
+    background-color: #006a4d;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
 .confirmation-section,
 .transaction-history-section,
 .visualization-section {
