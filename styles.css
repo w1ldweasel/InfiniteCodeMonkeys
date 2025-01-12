@@ -4,7 +4,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     margin: 0;
 }
 
@@ -18,7 +17,8 @@ body {
 }
 
 .screenshot {
-    width: 65%; /* Set the image width to 40% of its container */
+    width: 65%;
+    /* Set the image width to 40% of its container */
     height: auto;
     margin-top: 20px;
     border-radius: 8px;
@@ -43,11 +43,13 @@ h2 {
 
 .ans-no {
     background-color: rgb(246, 71, 71);
-    color:white;
+    color: white;
 }
+
 .ans-no:hover {
     background-color: rgb(224, 36, 36);
 }
+
 .consent-section p {
     margin-bottom: 15px;
     text-align: left;
@@ -59,9 +61,10 @@ h2 {
 }
 
 .confirm-action:hover {
-    background-color:#1CAC78;
+    background-color: #1CAC78;
 
 }
+
 form div {
     margin-bottom: 15px;
 
@@ -75,7 +78,19 @@ form div {
     }
 }
 
-.what-are-you-buying-section,
+#tryAgain {
+    display: none;
+}
+
+.green-bar {
+    color: white;
+    background-color: #006a4d;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
 .confirmation-section,
 .transaction-history-section,
 .visualization-section {
@@ -106,4 +121,3 @@ button:disabled {
     margin-top: 20px;
     text-align: center;
 }
-
